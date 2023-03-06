@@ -20,9 +20,12 @@ void main()
         {
             for(k=0;k<col; k++)
             {
-                int temp = arr[i][k];
-                arr[i][k] = arr[i][j];
-                arr[i][j] = temp;
+                if(arr[i][j]<arr[i][k])
+                {
+                    int temp = arr[i][k];
+                    arr[i][k] = arr[i][j];
+                    arr[i][j] = temp;
+                }
             }
         }
     }
