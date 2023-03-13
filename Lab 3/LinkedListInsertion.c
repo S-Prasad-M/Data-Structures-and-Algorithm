@@ -27,11 +27,19 @@ void insert (int num, int pos, struct node *head)
     {
         temphead = temphead->link;
     }
-    temp->data = num;
-    temp->link = temphead->link;
-    temphead->link = temp;
+    // To be filled;
 }
 
+void delete(int pos, struct node *head)
+{
+    struct node *temphead = head;
+    struct node *temp = (struct node*)malloc(sizeof(struct node*));
+    for(int i =0; i<pos-2; i++)
+    {
+        temphead = temphead->link;
+    }
+    ;
+}
 int main()
 {
     int choice;
@@ -90,6 +98,13 @@ int main()
                 }
             }
             break;
+        }
+        case 3:
+        {   
+                int pos;
+                printf("Enter the positionb to be deleted");
+                scanf("%d", &pos);
+                delete(pos);
         }
         case 4:
         {
