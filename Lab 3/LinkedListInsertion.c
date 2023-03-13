@@ -3,8 +3,7 @@
 struct node
 {
     int data;
-    struct node *
-    link;
+    struct node *link;
 };
 
 void create(int num, struct node *head)
@@ -18,6 +17,19 @@ void create(int num, struct node *head)
     temphead->link = temp;
     temp->data = num;
     temp->link = NULL;
+}
+
+void insert (int num, int pos, struct node *head)
+{
+    struct node *temphead = head;
+    struct node *temp = (struct node*)malloc(sizeof(struct node*));
+    for(int i =0; i<pos-2; i++)
+    {
+        temphead = temphead->link;
+    }
+    temp->data = num;
+    temp->link = temphead->link;
+    temphead->link = temp;
 }
 
 int main()
@@ -48,10 +60,37 @@ int main()
             }
             break;
         }
-        // case 2:
-        //     int num, pos;
-        //     printf("Enter node to be added and at which position: ");
-        //     scanf("%d %d", )
+        case 2:
+        {
+            int ch, num, pos;
+            printf("1.Beggining \n2. At position \n3. At end \n Enter Choice: ");
+            scanf("%d", &ch);
+            switch(ch)
+            {
+                case  1:
+                {
+                    printf("Enter node to be added");
+                    scanf("%d", &num);
+                    insert(num, 0, newnode);
+                    break;
+                }
+                case 2:
+                {
+                    printf("Enter node to be added and at which position: ");
+                    scanf("%d %d", &num, &pos);
+                    insert(num, pos, newnode);
+                    break;
+                }
+                case 3:
+                {
+                    printf("Enter node to be added");
+                    scanf("%d", &num);
+                    create(num, newnode);
+                    break;
+                }
+            }
+            break;
+        }
         case 4:
         {
             struct node *temp1 = newnode;
@@ -60,6 +99,7 @@ int main()
                 printf("%d\t", temp1->data);
                 temp1 = temp1->link;
             }
+            break;
         }
         default:
             return 0;
