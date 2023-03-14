@@ -27,7 +27,9 @@ void insert (int num, int pos, struct node *head)
     {
         temphead = temphead->link;
     }
-    // To be filled;
+    temp->data = num;
+    temp->link = temphead->link;
+    temphead->link = temp;
 }
 
 void delete(int pos, struct node *head)
