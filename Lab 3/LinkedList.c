@@ -40,7 +40,7 @@ void delete(int pos, struct node *head)
     {
         temphead = temphead->link;
     }
-    temphead->next = temphead->next->next;
+    temphead->link = temphead->link->link;
 }
 int main()
 {
@@ -106,7 +106,7 @@ int main()
                 int pos;
                 printf("Enter the positionb to be deleted");
                 scanf("%d", &pos);
-                delete(pos);
+                delete(pos, newnode);
         }
         case 4:
         {
