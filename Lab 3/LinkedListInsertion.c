@@ -35,12 +35,12 @@ void insert (int num, int pos, struct node *head)
 void delete(int pos, struct node *head)
 {
     struct node *temphead = head;
-    struct node *temp = (struct node*)malloc(sizeof(struct node*));
+    //struct node *temp = (struct node*)malloc(sizeof(struct node*));
     for(int i =0; i<pos-2; i++)
     {
         temphead = temphead->link;
     }
-    ;
+    temphead->next = temphead->next->next;
 }
 int main()
 {
