@@ -6,7 +6,7 @@ struct node
     int data;
     struct node* next;
 };
-void insertend(int item, struct node *head)
+void create(int item, struct node *head)
 {
     struct node* temp=(struct node*)malloc(sizeof(struct node*));
     struct node* temphead = head;
@@ -28,18 +28,30 @@ void insertend(int item, struct node *head)
     }
 }
 
+int length(struct node* head)
+{
+    struct node* temphead = head;
+    int l = 0;
+    while (temphead != NULL)
+    {
+        temphead = temphead->next; l++;
+    }
+    return l;
+}
+
 void insertpos(int item, int pos, struct node* head)
 {
     struct node* temp=(struct node*)malloc(sizeof(struct node*));
     struct node* temphead = head;
     temp->data = item;
-    if (temphead == NULL)
+    if (pos == 1)
     {
-        head = temp;
-        temp->next = NULL;
         temp->prev = NULL;
+        temp->next = temphead;
+        temphead->prev = temp;
+        temphead = temp;
     }
-    else
+    else if(pos>1 && pos<length(head))
     {
         while(pos-1 != 1)
         {
@@ -49,6 +61,15 @@ void insertpos(int item, int pos, struct node* head)
         temp->prev=temphead;
         temp->next=temphead->next;
         temphead->next->prev = temp;
+        temphead->next = temp;
+    }
+    else
+    {
+        while(temphead->next != NULL)
+        {
+            temphead = temphead->next;
+        }
+        temp->prev = temphead;
         temphead->next = temp;
     }
 }
@@ -77,26 +98,79 @@ void display(struct node* head)
 
 int main()
 {
-    struct node* head = (struct node*)malloc(sizeof(struct node*));
-    int len, item, pos;
-    printf("Enter number of elements:");
-    scanf("%d",&len);
-    printf("Enter the first element");
-    scanf("%d", &item);
-    head->prev = NULL;
-    head->data = item;
-    head->next = NULL;
-    for(int i=0; i<len-1; i++)
+    int choice;
+    int num, len;
+    struct node *head = (struct node*)malloc(sizeof(struct node*));
+    // printf("1.Create \n2. Insert \n3. Delete \n4.Display \n Enter Choice: ");
+    // scanf("%d", &choice);
+    while (1)
     {
-        printf("Enter the value of node:");
-        scanf("%d", &item);
-        insertend(item,head);
+    printf("\n1.Create \n2. Insert \n3. Delete \n4.Display \n Enter Choice: ");
+    scanf("%d", &choice);
+    switch(choice)
+    {
+        case 1:
+        {
+            printf("Enter number of nodes:");
+            scanf("%d", &len);
+            printf("enter first node data:");
+            scanf("%d",&num);
+            head->next = NULL; 
+            head->data= num;
+            head->prev = NULL;
+            for(int i =0;i<len-1;i++)
+            {
+                printf("Enter element:");
+                scanf("%d",&num);
+                create(num, head);
+            }
+            break;
+        }
+        case 2:
+        {
+            int ch, num, pos;
+            printf("1.Beggining \n2. At position \n3. At end \n Enter Choice: ");
+            scanf("%d", &ch);
+            switch(ch)
+            {
+                case  1:
+                {
+                    printf("Enter node to be added");
+                    scanf("%d", &num);
+                    insertpos(num, 1, head);
+                    break;
+                }
+                case 2:
+                {
+                    printf("Enter node to be added and at which position: ");
+                    scanf("%d %d", &num, &pos);
+                    insertpos(num, pos, head);
+                    break;
+                }
+                case 3:
+                {
+                    printf("Enter node to be added");
+                    scanf("%d", &num);
+                    create(num, head);
+                    break;
+                }
+            }
+            break;
+        }
+        case 3:
+        {   
+                int pos;
+                printf("Enter the position to be deleted");
+                scanf("%d", &pos);
+                delete(pos, head);
+        }
+        case 4:
+        {
+            display(head);
+            break;
+        }
+        default:
+            return 0;
     }
-    display(head);
-    printf("Enter the value of node:");
-    scanf("%d", &item);
-    printf("Enter the position:");
-    scanf("%d", &pos);
-    insertpos(item, pos, head);
-    display(head);
+    }
 }
