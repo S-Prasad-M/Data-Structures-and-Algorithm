@@ -1,16 +1,28 @@
 #include<stdio.h>
 #include<conio.h>
+void display(int arr[], int top)
+{
+    int i = top;
+    while (i>=0)
+    {
+        printf("%d \t", arr[i]);
+        i--;
+    }
+}
+
+
 int main()
 {
-    int size;
+    int size, i, j;
     printf("Enter size of the stack: ");
     scanf("%d",&size);
-    int stack[size]; int top = -1;
+    int stack[size]; int top = -1; int temp;
+    int revstack[size];
     while(1)
     {
         int choice, item;
         printf("***********************************************\n");
-        printf("1.Push \n2.Pop \n3.Display \n4.Exit \nEnter the choice: ");
+        printf("1.Push \n2.Pop \n3.Display \n4.Reverse \n5.Sort  \n6.Exit  \nEnter the choice: ");
         scanf("%d",&choice);
         switch (choice)
         {
@@ -44,11 +56,34 @@ int main()
                 printf("Stack is empty\n");
             }
             else{
-                for(int i =0; i<=top; i++)
+                display(stack,top);
+            }
+            break;
+        case 4:
+            i = top;
+            j=0;
+            while (i>=0)
+            {
+                revstack[j]=stack[i];
+                i--;j++;
+            }
+            display(revstack,top);
+            break;
+        case 5:
+            for(i=0;i<top-1;i++)
+            {
+                for(j=0;j<top-i-1;j++)
                 {
-                    printf("%d\t",stack[i] );
+                    if(stack[i]>stack[j])
+                    {
+                        temp = stack[i];
+                        stack[i] = stack[j];
+                        stack[j] = temp;
+                    }
                 }
             }
+            printf("After Sorting... \t");
+            display(stack, top);
             break;
         default:
             printf("Thank you for using stack\n");
