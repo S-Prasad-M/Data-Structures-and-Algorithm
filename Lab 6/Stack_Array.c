@@ -10,7 +10,6 @@ void display(int arr[], int top)
     }
 }
 
-
 int main()
 {
     int size, i, j;
@@ -42,7 +41,7 @@ int main()
         case 2:
             if(top==-1)
             {
-                printf("Stack is already empty");
+                printf("Stack is already empty [Underflow]");
             }
             else
             {
