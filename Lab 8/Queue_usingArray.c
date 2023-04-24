@@ -17,18 +17,18 @@ main()
         switch (choice)
         {
             case 1:
-            insert();
-            break;
+                insert();
+                break;
             case 2:
-            delete();
-            break;
+                delete();
+                break;
             case 3:
-            display();
-            break;
+                display();
+                break;
             case 4:
-            exit(1);
+                exit(1);
             default:
-            printf("Wrong choice \n");
+                printf("Wrong choice \n");
         }
         printf("******************************************************************************\n");
     }
