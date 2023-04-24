@@ -3,7 +3,7 @@ int MAX = 100;
 void insert();
 void delete();
 void display();
-int queue_array[MAX];
+int queue[MAX];
 int rear = - 1;
 int front = - 1;
 main()
@@ -45,7 +45,7 @@ void insert()
         printf("Inset the element in queue : ");
         scanf("%d", &add_item);
         rear = rear + 1;
-        queue_array[rear] = add_item;
+        queue[rear] = add_item;
     }
 }
 void delete()
@@ -57,7 +57,7 @@ void delete()
     }
     else
     {
-        printf("Element deleted from queue is : %d\n", queue_array[front]);
+        printf("Element deleted from queue is : %d\n", queue[front]);
         front = front + 1;
     }
 }
@@ -70,7 +70,7 @@ void display()
     {
         printf("Queue is : \n");
         for (i = front; i <= rear; i++)
-            printf("%d ", queue_array[i]);
+            printf("%d ", queue[i]);
         printf("\n");
     }
 }
