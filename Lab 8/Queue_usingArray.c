@@ -57,7 +57,7 @@ void delete()
     }
     else
     {
-        printf("Element deleted from queue is : %d\n", queue[front]);
+        printf("Element deleted from queue is: %d\n", queue[front]);
         for(int i=0;i<rear;i++)
         {
             queue[i] = queue[i+1];
@@ -65,6 +65,7 @@ void delete()
         rear--;
     }
 }
+
 void display()
 {
     int i;
