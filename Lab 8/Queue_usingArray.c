@@ -41,7 +41,9 @@ void insert()
     else
     {
         if (front == - 1)
-        front = 0;
+        {
+            front = 0;   
+        }
         printf("Inset the element in queue : ");
         scanf("%d", &add_item);
         rear = rear + 1;
