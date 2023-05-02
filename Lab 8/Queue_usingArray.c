@@ -1,12 +1,13 @@
 #include <stdio.h>
+#include<stdlib.h>
 int MAX = 100;
+int queue[100];
+int rear = - 1;
+int front = - 1;
 void insert();
 void delete();
 void display();
-int queue[MAX];
-int rear = - 1;
-int front = - 1;
-main()
+void main()
 {
     int choice;
     while (1)
