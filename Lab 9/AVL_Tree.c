@@ -1,5 +1,9 @@
-#include <stdio.h>
+// Reference: https://www.thecrazyprogrammer.com/2014/03/c-program-for-avl-tree-implementation.html
+// 🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶
+// U_U U_U U_U U_U U_U U_U U_U U_U U_U U_U U_U UU U_U U_U U_U U_U U_U U_U U_U U_U U_U U_U U_U U_U
 
+
+#include <stdio.h>
 typedef struct node
 {
     int data;
