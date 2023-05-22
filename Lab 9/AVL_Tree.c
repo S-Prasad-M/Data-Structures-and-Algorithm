@@ -80,7 +80,7 @@ node *insert(node *T, int x)
         T->left = NULL;
         T->right = NULL;
     }
-    else if (x > T->data) // insert in right subtree
+    else if (x > T->data) 
     {
         T->right = insert(T->right, x);
         if (BF(T) == -2)
@@ -109,7 +109,7 @@ node *Delete(node *T, int x)
     {
         return NULL;
     }
-    else if (x > T->data) // insert in right subtree
+    else if (x > T->data) 
     {
         T->right = Delete(T->right, x);
         if (BF(T) == 2)
@@ -121,7 +121,7 @@ node *Delete(node *T, int x)
     else if (x < T->data)
     {
         T->left = Delete(T->left, x);
-        if (BF(T) == -2) // Rebalance during windup
+        if (BF(T) == -2) 
             if (BF(T->right) <= 0)
                 T = RR(T);
             else
@@ -129,15 +129,14 @@ node *Delete(node *T, int x)
     }
     else
     {
-        // data to be deleted is found
         if (T->right != NULL)
-        { // delete its inorder succesor
+        { 
             p = T->right;
             while (p->left != NULL)
                 p = p->left;
             T->data = p->data;
             T->right = Delete(T->right, p->data);
-            if (BF(T) == 2) // Rebalance during windup
+            if (BF(T) == 2) 
                 if (BF(T->left) >= 0)
                     T = LL(T);
                 else
