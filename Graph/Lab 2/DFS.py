@@ -5,6 +5,6 @@ def dfs(graph, node, visited):
             dfs(graph,k, visited)
     return visited
 
-graph = {}   #Input Graph as dictionary here
+graph = {}   # Input Graph as dictionary here
 visited = dfs(graph,'A', [])
 print(visited)
