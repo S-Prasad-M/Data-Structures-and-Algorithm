@@ -2,13 +2,6 @@ from ds import Graph, Queue
 
 
 def bfs(grph: Graph, vrt):
-    """
-    The algorithm works as follows:
-        1. Start by putting any one of the graph's vertices at the back of a queue.
-        2. Take the front item of the queue and add it to the visited list.
-        3. Create a list of that vertex's adjacent nodes. Add the ones which aren't in the visited list to the back of the queue.
-        4. Keep repeating steps 2 and 3 until the queue is empty.
-    """
 
     if not grph.isVertice(vrt):
         return None
@@ -32,7 +25,7 @@ def bfs(grph: Graph, vrt):
     return visited
 
 
-G = Graph(graph={0: [1, 2, 3], 1: [0, 2], 2: [0, 4], 3: [1], 4: [2]})
+G = Graph(graph={1: [2, 4], 2: [1, 3, 4, 5], , 4: [1, 2,5], 5:[2, 3, 4], 3: [2, 5]})
 # # G = Graph()
 # G.add_vertice(1)
 # G.add_vertice(2)
