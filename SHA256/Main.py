@@ -1,3 +1,5 @@
+#https://www.youtube.com/watch?v=MHf6KUsv3bA
+
 get_bin = lambda x, n: format(x, 'b').zfill(n)
 def Ch(x,y,z):
     a=(x&y)^(-x&z) 
@@ -26,8 +28,19 @@ def f2(x):
 def f3(x):
     a=get_bin(x,32)
     i=rr(a,7)
-    j=arr(a,18)
+    j=rr(a,18)
     k=x>>3
     i=int(1,2)
     j=int(1,2)
     return i^j^k
+def f4(x):
+    a=get_bin(x,32) 
+    i=rr(a,17) 
+    j=rr(a,19) 
+    k=x>>10
+    i=int(1, 2) 
+    j=int(1,2)
+    return i^j^k
+def rr (x,y):
+    a= (x[-y:] + x[:-y]) 
+    return a
