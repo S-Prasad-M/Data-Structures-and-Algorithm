@@ -44,3 +44,26 @@ def f4(x):
 def rr (x,y):
     a= (x[-y:] + x[:-y]) 
     return a
+mod=4294967296 #### 2^32
+W=[]
+s='Group 14'
+print "\n"+s 
+slen=len(s)
+i=0
+a= [ord(c) for c in s] ##### convert message to res i=0
+k=[1116352408,3624381080, 3835390401,2554220882,6663
+h1=1779033703
+h2=3144134277
+h3=1013904242
+h4-2773480762
+h5-1359893119
+h6=2600822924
+h7=528734635
+h8=1541459225
+#### FILL UPTO 512 BITS IN a
+a.append(128) # 10000000
+n=len(s)
+if(n %448!=0):
+    for i in range(n,55):
+        a.append(0)
+
