@@ -10,6 +10,7 @@
 # print(L)
 
 d = {0:[],1:[],2:[],3:[],4:[],5:[],6:[],7:[],8:[],9:[]}
+L = []
 n = int(input("Ënter number of elements:"))
 for i in range(n):
     L.append(input("Ënter:"))
@@ -17,7 +18,10 @@ m = max(L)
 mod=10
 for i in range(len(str(m))):
     for j in L:
-        d[int((j%mod)/(10*i)].append(j)
-        
+        d[int((j%mod)/(10*i))].append(j)
+    L = []
+    for j in d.items():
+        L.extend[j]
+    d = {0:[],1:[],2:[],3:[],4:[],5:[],6:[],7:[],8:[],9:[]}
     
 
