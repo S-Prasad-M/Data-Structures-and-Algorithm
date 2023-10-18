@@ -22,8 +22,15 @@ class Trie(object):
             return False
          current = current[l]
       return True
+a = 'ACAATGAGGTCACTATGTT'
 ob1 = Trie()
-ob1.insert("apple")
-print(ob1.search("apple"))
-print(ob1.search("app"))
-print(ob1.startsWith("app"))
+n = int(input("mer mer:"))
+for i in range(n):
+   for j in range(i,len(a),n):
+      ob1.insert(a[j:j+n])
+
+a = input("Sequence:")
+print(ob1.search(a))
+
+# print(ob1.search("app"))
+# print(ob1.startsWith("app"))
