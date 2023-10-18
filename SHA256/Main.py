@@ -131,3 +131,9 @@ for i in range(64):
     h7 = (t7+h7)%mod
     h8 = (t8+h8)%mod
 print(hex(h1)[2:]+" "+hex(h2)[2:]+" "+hex(h3)[2:]+" "+hex(h4)[2:]+" "+hex(h4)[2:]+" "+hex(h5)[2:]+" "+hex(h6)[2:]+" "+hex(h7)[2:]+" "+hex(h8)[2:])
+
+# import hashlib 
+# str = "iMPORTANT AND pRIVATE"  
+# result = hashlib.sha256(str.encode()) 
+# print("The hexadecimal equivalent of SHA256 is : ") 
+# print(result.hexdigest())
