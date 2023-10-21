@@ -38,7 +38,7 @@ def printMerkleTree(tree):
         print()
 
 # Example usage:
-data = ["Transaction1", "Transaction2", "Transaction3", "Transaction4"]
+data = ["ABCD", "EFGH", "IJKL", "MNOP"]
 
 fullTree = buildAndPrintMerkleTree(data)
 print("Merkle Root:", fullTree[-1][0])  # Merkle Root is the last element
