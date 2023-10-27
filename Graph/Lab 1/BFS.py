@@ -43,3 +43,36 @@ G.Print_adjList()
 
 bfs = bfs(G, 1)
 print(bfs)
+
+
+# dic = {}
+# n = int(input("Enter the number of nodes: "))
+# for i in range(n):
+#     dic[i] = []
+# print(dic)
+# ver = int(input("Enter the number of vertices: "))
+
+# for i in range(ver):
+#     s = input("Enter edge (u,v): ")
+#     u, v = map(int, s.split(','))
+#     dic[u].append(v)
+#     dic[v].append(u)
+# print(dic)
+# start = int(input("Enter the start vertex: "))
+# queue = []
+# visited = [0 for i in range(n)]
+# queue.append(start)
+
+# while queue:
+#     visited[start] = 1
+
+#     for i in dic[start]:
+#         if visited[i] == 0:
+#             queue.append(i)
+#             visited[i] = 1
+
+#     if len(queue) != 0:
+#         start = queue.pop(0)
+#         print(start)
+
+
