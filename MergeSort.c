@@ -3,14 +3,10 @@
 // To merge two sublists, compare the first element of each sublist and add the smaller one to the new sorted sublist. Repeat this process until one of the sublists is empty, then add the remaining elements of the other sublist to the new sorted sublist.
 // Repeat step 3 until all sublists have been merged into a single sorted list.
 
-// Merge sort in C
-
 #include <stdio.h>
 
-// Merge two subarrays L and M into arr
 void merge(int arr[], int p, int q, int r) {
 
-  // Create L ← A[p..q] and M ← A[q+1..r]
   int n1 = q - p + 1;
   int n2 = r - q;
 
@@ -21,7 +17,6 @@ void merge(int arr[], int p, int q, int r) {
   for (int j = 0; j < n2; j++)
     M[j] = arr[q + 1 + j];
 
-  // Maintain current index of sub-arrays and main array
   int i, j, k;
   i = 0;
   j = 0;
