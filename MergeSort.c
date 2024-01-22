@@ -1,7 +1,4 @@
-// Divide the unsorted list into n sublists, each containing one element (a list of one element is considered sorted).
-// Repeatedly merge sublists to produce new sorted sublists until there is only one sublist remaining. This will be the sorted list.
-// To merge two sublists, compare the first element of each sublist and add the smaller one to the new sorted sublist. Repeat this process until one of the sublists is empty, then add the remaining elements of the other sublist to the new sorted sublist.
-// Repeat step 3 until all sublists have been merged into a single sorted list.
+
 
 #include <stdio.h>
 
